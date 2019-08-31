@@ -22,6 +22,31 @@ app.post("/employee1", (req, res) => {
 app.post("/employee", func.enterEmployees);
 app.post("/signup", func.signup);
 app.post("/login", func.login);
+app.post("/age", (req,res)=>{
+    db.doc("stats/age").get().then(doc=>{
+        return res.json(doc.data())
+    })
+})
+app.post("/family", (req,res)=>{
+    db.doc("stats/family").get().then(doc=>{
+        return res.json(doc.data())
+    })
+})
+app.post("/figures", (req,res)=>{
+    db.doc("stats/figures").get().then(doc=>{
+        return res.json(doc.data())
+    })
+})
+app.post("/gender", (req,res)=>{
+    db.doc("stats/gender").get().then(doc=>{
+        return res.json(doc.data())
+    })
+})
+app.post("/work", (req,res)=>{
+    db.doc("stats/work").get().then(doc=>{
+        return res.json(doc.data())
+    })
+})
 
 exports.api = functions.https.onRequest(app);
 
