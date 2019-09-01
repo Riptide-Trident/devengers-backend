@@ -7,6 +7,10 @@ const FBAuth = require("./utils/FBauth");
 const express = require("express");
 const app = express();
 
+
+const cors=require('cors')
+app.use(cors())
+
 app.post("/employee1", (req, res) => {
   admin
     .firestore()
